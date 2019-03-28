@@ -60,7 +60,7 @@ if(!phone_number($phone_number)) {
 }
 
 //проверка почты
-if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if(!filter_var($email, FILTER_VALIDATE_EMAIL) || !check_length($full_name, 6, 20))  {
     $errors = $errors."3";
 }
 

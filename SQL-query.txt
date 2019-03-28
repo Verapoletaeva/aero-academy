@@ -1,0 +1,32 @@
+﻿Создание базы данных
+CREATE DATABASE IF NOT EXIST database_name //создать базу если еще не существует
+CHARACTER SET utf8; //с кодировкой
+
+Создание таблицы
+CREATE TABLE IF NOT EXIST table_name ( //создать таблицу, если еще не существует
+  id int AUTO_INCREMENT, //целочисленный, автогенерируемый
+  name VARCHAR(25) NOT NULL, //строковый, до 25 символов
+  date DATE NOT NULL, //дата в формате YYYY-MM-DD
+  text TEXT //строковый, может содержать достаточно длинный текст
+);
+
+Запрос на получение списка строк
+SELECT * FROM table_name //получить данные из таблицы
+WHERE name = "Имя" //где имя = "Имя"
+ORDER BY id; //сортировка ASC(по умолчанию) - по возрастанию, DESC - по убыванию
+
+Вставка строки
+INSERT INTO table_name (name, date, text) //вставить в таблицу строку с параметрами
+VALUES ("Имя, "2019-03-28", "Какой-либо текст"); //и их значениями
+
+Обновление строки
+UPDATE table_name SET name = "Другое Имя" //установка нового имени
+WHERE id = 1; //для строки, где id = 1
+
+Удаление строк
+DELETE FROM table_name //удаление строки
+WHERE id = 1; //где id = 1 (Если нет условия, все строки будут удалены)
+
+//Удаление всей таблицы
+DROP TABLE table_name;
+
